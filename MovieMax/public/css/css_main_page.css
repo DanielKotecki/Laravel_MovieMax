@@ -1,0 +1,116 @@
+.back{
+ background-color:#121A21 ;
+}
+.card-deck{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.card-img-top{
+    height: 150px;
+    width: 150px;
+}
+nav{
+    background-color:#0000;
+}
+.addmovie{
+  
+    width: 400px;
+    height: 500px;
+}
+
+.flexk{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.maind1{
+    
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+#links{
+    margin-left: 10px;
+}
+
+.maind3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.listItemWrapper{
+    list-style: none;
+    padding: 50px 30px;
+    
+    display: flex;
+    align-items: center;
+}
+.listItem__image{
+    flex-shrink: 0;
+    margin-right: 30px;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+border: 1px solid white;
+}
+.listItem__name{
+    color: white;
+    margin: 0;
+    font-weight: 700;
+
+}
+.listItem__des{
+    color: white;
+    margin: 10px 0 20px;
+font-weight: 300;
+}
+.listWrrapper__wrapper{
+    width: 80vw;
+    margin-left: auto ;
+    margin-right: auto;
+}
+.ul1{
+    margin-left: 45%;
+}
+.moviePlayer{
+    margin-left: 20px;
+    width: 950px;
+    height: 643px;
+    background-color: #1C1E22;
+    border: 1px solid #DFDFDF;
+}
+.iframeMovie{
+    margin-top: 19px;
+    margin-left: 11px;
+    width: 928px;
+    height: 557px;
+}
+.titleplayer{
+    padding-top: 15px;
+    padding-left: 16px;
+    color: white;
+}
+.maind4{
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.koment{
+    margin-left: 10px;
+  
+    max-width: 350px;
+}
+.card{
+      margin-bottom: 13px;
+     
+}
+.card-body{
+    background-color: #162029;
+    color: #B2D0CC;
+    
+}
