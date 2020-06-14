@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('LogoutPage');
 });
 Route::view('/main', 'mainPage');
 //Route::view('/add', 'addmoviePage');
 Route::get('/add', function () {
+    
+    if (!Auth::user()->id =1) {
+        return redirect('main');
+    }
     return view('addmoviePage');
-});
+})->middleware('auth');
 
 Route::post('sendToDatabase', 'Addmovie@addmovieDatabase');
 
