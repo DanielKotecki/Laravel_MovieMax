@@ -3,6 +3,12 @@
 <div class="flexk">
     
     <div class="addmovie">
+      <div class="error">
+@foreach ($errors->all() as $error)
+          <li class="errorAdd">{{$error}}</li>
+      @endforeach
+      </div>
+      
  <form action="sendToDatabase" method="POST">
      {{ @csrf_field() }}
     <input class="form-control" type="text" placeholder="Nazwa Filmu" name="nameMovie"><br>

@@ -151,3 +151,11 @@ font-weight: 300;
 .con1{
     border: 1px solid white;
 }
+.errorAdd{
+    list-style: none;
+    color: red;
+    font-weight: 600;
+}
+.error{
+    margin-bottom: 15px;
+}
