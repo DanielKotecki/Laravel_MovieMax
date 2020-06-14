@@ -8,7 +8,7 @@ class Showmovie extends Controller
 {
    public function show()
    {
-       $movies=DB::table('movie')->select('movie.id','movie.name','movie.category','movie.img','movie.release_date')->get();
+       $movies=DB::table('movie')->select('movie.id','movie.name','movie.category','movie.img','movie.release_date')->paginate(5);
       //return $movies;
         $link=DB::table('links')->get();
 

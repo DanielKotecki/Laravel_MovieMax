@@ -8,6 +8,12 @@ class Addmovie extends Controller
 {
    public function addmovieDatabase(Request $req)
    {
+     $req->validate([
+      'nameMovie'=>'required',
+      'selectCategory'=>'required',
+      'src_img'=>'required',
+      'date'=>'required'
+     ]);
      $nameMovie=  $req->input("nameMovie");
      $category=  $req->input("selectCategory");
      $src_img=  $req->input("src_img");

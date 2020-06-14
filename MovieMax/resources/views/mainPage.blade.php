@@ -31,7 +31,7 @@
   </div>
   </li> 
 @endforeach
-    
+   {{$movies->links()}} 
   
   
   </ul>
