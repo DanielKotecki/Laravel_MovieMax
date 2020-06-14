@@ -23,7 +23,7 @@
               <a class="nav-link" href="/main"><h7 class="navH7">Strona Główna</h7><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><h7 class="navH7">Kontakt</h7><span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/kontakt"><h7 class="navH7">Kontakt</h7><span class="sr-only">(current)</span></a>
             </li>
             @auth
             @if (\Illuminate\Support\Facades\Auth::user()->id==1)
@@ -40,24 +40,25 @@
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Logowanie') }}</a>
+                    <a class="nav-link" href="{{ route('login') }}"><h7 class="navH7">{{ __('Logowanie') }}</h7></a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Rejestracja') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}"><h7 class="navH7">{{ __('Rejestracja') }}</h7></a>
                     </li>
                 @endif
             @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                      <h7 class="navH7">  {{ Auth::user()->name }} <span class="caret"></h7></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                      <h7 class="navH7"><a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Wyloguj') }}
+                      </h7>
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

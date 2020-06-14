@@ -19,6 +19,9 @@ class Comment extends Controller
 
     public function deleteCom($id)   
     {
+        if (Auth::user()->id !=1) {
+            return redirect()->back();
+        }
         DB::table('comments')->where('id',$id)->delete();
         return redirect()->back();
     }

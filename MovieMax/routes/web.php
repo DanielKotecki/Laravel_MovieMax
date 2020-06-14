@@ -35,10 +35,11 @@ Route::get('/link/{id}', 'linkAdd@addlinkshow');
 Route::post('/link/{id}','linkAdd@addlink');
 
 Route::get('/player/{id}', 'Player@PlayMovie');
-Route::get('/deleteCom/{id}','Comment@deleteCom');
-Route::post('/addCom/{id}','Comment@addCom');
+Route::get('/deleteCom/{id}','Comment@deleteCom')->middleware('auth');
+Route::post('/addCom/{id}','Comment@addCom')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::view('/kontakt', 'kontak');
