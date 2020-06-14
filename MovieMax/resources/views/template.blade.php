@@ -9,28 +9,29 @@
     <link rel="stylesheet" href="{{URL::asset('css\css_main_page.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   
-    <title>Hello, world!</title>
+    <title>MovieMax</title>
   </head>
   <body class="back">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" class="navbarmycolor">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/main"><h3 class="logo">MovieMax</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/main"><h7 class="navH7">Strona Główna</h7><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#"><h7 class="navH7">Kontakt</h7><span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+            @auth
+            @if (\Illuminate\Support\Facades\Auth::user()->id==1)
+         <li class="nav-item">
+              <a class="nav-link" href="#"><h7 class="navH7">Dodaj Film jak Admin</h7><span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+         @endif 
+         @endauth
           </ul>
         </div>
       </nav>

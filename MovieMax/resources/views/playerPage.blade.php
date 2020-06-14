@@ -3,27 +3,49 @@
 <div class="maind4">
    
     <div class="moviePlayer">
-        <div class="titleplayer"><h3>Title</h3></div>
-        @foreach ($playerData as $item)
+         @foreach ($playerData as $item)
+        <div class="titleplayer"><h3>{{$item->name}}</h3></div>
+       
             <iframe src="{{$item->link}}" frameborder="0" class="iframeMovie" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
         @endforeach
+        <div class="textArea">
+          @auth
+               <label class="hkoment"><h3>Dodaj Komentarz</h3></label>
+            <div class="form-group">
+                @foreach ($idforCom as $item)
+                    <form action="/addCom/{{$item->movieId}}" method="POST">
+                    {{ @csrf_field() }}
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="textCom"></textarea>
+                <input type="submit" class=" btn btn-primary btnkoment">
+                </form>
+                @endforeach
+            </div>
+          @endauth
+          @guest
+          <label class="hkoment"><h3>Zaloguj się aby dodać Komentarz</h3></label>
+          @endguest
+           
+        </div>
+        
     </div>
     <div class="koment">
-       <div class="card">
+@foreach ($secKom as $item)
+    <div class="card">
         <div class="card-body">
-            <h4>User</h4>
+            <h4>{{$item->name}}</h4>
           <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis amet quae ea repellat, totam ex eaque consequuntur delectus dolore modi at cupiditate perferendis laboriosam corporis quos eligendi impedit. Dignissimos, repellendus!
+            {{$item->comment}}
           </p>
+          @auth
+             @if (\Illuminate\Support\Facades\Auth::user()->id==1)
+          <a href="{{url('deleteCom',$item->id)}}">Usuń</a>
+          @endif 
+          @endauth
+          
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          This is some text within a card body.
-        </div>
-      </div> 
-    </div>
-    
+@endforeach
+{{$secKom->links()}}
 </div>
 
 

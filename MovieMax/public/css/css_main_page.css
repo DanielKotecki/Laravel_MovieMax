@@ -114,3 +114,31 @@ font-weight: 300;
     color: #B2D0CC;
     
 }
+.textArea{
+    margin-top: 15px;
+    
+}
+.hkoment{
+    color: white;
+}
+.form-control{
+    max-width: 700px;
+}
+.btnkoment{
+    margin-top: 10px;
+}
+.navbar {
+    color: white;
+    background-color: black;
+}
+.navbar-brand{
+    font-weight: 800;
+    color: tomato;
+}
+.logo{
+    font-weight: 500;
+    color: tomato;
+}
+.navH7{
+    color: tomato;
+}
